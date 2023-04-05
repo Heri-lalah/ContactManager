@@ -25,12 +25,12 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Home
+                            <a class="nav-link active" href="{{ path('app_home') }}">Home
                                 <span class="visually-hidden">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Liste des contacts</a>
+                            <a class="nav-link" href="{{ path('contacts') }}">Liste des contacts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Catégories</a>
@@ -40,7 +40,8 @@
             </div>
         </nav>
 
-
-        {% block body %}{% endblock %}
+        <div class="mt-2 bg-light">
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>
