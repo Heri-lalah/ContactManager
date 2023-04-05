@@ -31,6 +31,9 @@ class Contact
     #[ORM\Column]
     private ?string $cp = null;
 
+    #[ORM\ManyToOne(inversedBy: 'contacts')]
+    private ?Category $category = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +107,18 @@ class Contact
     public function setCp(string $cp): self
     {
         $this->cp = $cp;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
