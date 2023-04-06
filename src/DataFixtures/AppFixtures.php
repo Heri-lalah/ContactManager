@@ -15,7 +15,7 @@ class AppFixtures extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
-        $categories = ["Professionnel", "Sport", "Privé"];
+        $categories = ["Professionnel", "Sport", "Private"];
 
         $genderList = ["M", "F"];
 
