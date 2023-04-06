@@ -12,11 +12,17 @@
                 <div class="card mb-3">
                     <img src="{{ asset('images/' ~ (category.imageUrl))}}" class="img-fluid rounded-circle block my-2 mx-auto" style="width: 200px; height: 200px" alt="{{ category.name }}">
                     <div class="card-body">
-                        <h4 class="fw-bold">{{ category.name }}</h4>
+                        <h4 class="fw-bold text-center
+                        text-{% include('category/_categorycolor.html.twig') %}
+                        ">{{ category.name }}</h4>
                         <p class="card-text" style="height: 5rem">{{ category.description }}.</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"> nombre contacts</li>
+                        <li class="list-group-item">
+                            <a href="{{ path('showcategory', {'id':category.id}) }}"
+                               class="btn btn-sm form-control btn-outline-{% include('category/_categorycolor.html.twig') %}
+                            ">Details...</a>
+                        </li>
                     </ul>
                 </div>
 

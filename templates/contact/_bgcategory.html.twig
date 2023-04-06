@@ -1,12 +1,12 @@
-<span href="#"
-        class="badge
+<a href="{{ path('showcategory', {'id' : contact.category.id}) }}"
+        class="badge nav-link
         {% if(contact.category.name == 'Professionnel') %}
             bg-success
         {% elseif(contact.category.name == 'Sport') %}
-            bg-warning
+            bg-warning nav-link
         {% else %}
-           bg-danger
+           bg-danger nav-link
         {% endif %}"
 >
-        {{ contact.category.name }}
-</span>
+    {{ contact.category.name }}
+</a>
