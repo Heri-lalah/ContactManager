@@ -24,7 +24,6 @@ class ContactController extends AbstractController
     #[Route('/contact/{id}', name:'show_contact')]
     public function show(int $id, ContactRepository $contactRepository)
     {
-        $contacts = $contactRepository->getRandomContact();
         $contact = $contactRepository->find($id);
 
         if(!$contact) {
@@ -34,7 +33,6 @@ class ContactController extends AbstractController
         return $this->render('contact/showContact.html.twig',
             [
                 'contact' => $contact,
-                'contacts' => $contacts
-            ]);
+             ]);
     }
 }
