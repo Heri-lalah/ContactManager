@@ -5,8 +5,10 @@
 {% block body %}
 <div class="container">
     <h4>Listes de contacts</h4>
-
-    {% include('contact/_contacts.html.twig') %}
-
+    <div class="row">
+        {% for contact in contacts %}
+        {% include('contact/_contacts.html.twig') %}
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

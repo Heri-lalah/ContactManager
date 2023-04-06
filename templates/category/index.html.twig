@@ -5,5 +5,23 @@
 {% block body %}
 <div class="container">
     <h4>Liste des catégories</h4>
+
+    <div class="row">
+        {% for category in categories %}
+            <div class="col col-lg-4">
+                <div class="card mb-3">
+                    <img src="{{ asset('images/' ~ (category.imageUrl))}}" class="img-fluid rounded-circle block my-2 mx-auto" style="width: 200px; height: 200px" alt="{{ category.name }}">
+                    <div class="card-body">
+                        <h4 class="fw-bold">{{ category.name }}</h4>
+                        <p class="card-text" style="height: 5rem">{{ category.description }}.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"> nombre contacts</li>
+                    </ul>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

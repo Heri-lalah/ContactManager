@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h4>Contacts</h4>
+
+        <div class="row justify-content-center">
+            <div class="col col-md-4">
+                <div class="card mb-3">
+                    <h3 class="card-header">{{ contact.name }}</h3>
+                    <img src="{{ contact.image }}" alt="{{ contact.name }}" class="d-block" width="100%" height="200">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Addresse : {{ contact.adress }}</li>
+                        <li class="list-group-item">C.P : {{ contact.cp }}</li>
+                        <li class="list-group-item">Téléphone : {{ contact.phoneNumber }}</li>
+                    </ul>
+                    <div class="card-body">
+                        <div class="row">
+                            {% include('contact/_bgcategory.html.twig') %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for contact in contacts %}
+            {% include('contact/_contacts.html.twig') %}
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

@@ -42,6 +42,7 @@ class ContactRepository extends ServiceEntityRepository
 //    /**
 //     * @return Contact[] Returns an array of Contact objects
 //     */
+
 //    public function findByExampleField($value): array
 //    {
 //        return $this->createQueryBuilder('c')
@@ -53,6 +54,13 @@ class ContactRepository extends ServiceEntityRepository
 //            ->getResult()
 //        ;
 //    }
+
+    public function getRandomContact(){
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.name')
+            ->getQuery()
+            ->getResult();
+    }
 
 //    public function findOneBySomeField($value): ?Contact
 //    {

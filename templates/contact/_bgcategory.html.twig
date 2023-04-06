@@ -1,0 +1,12 @@
+<span href="#"
+        class="badge
+        {% if(contact.category.name == 'Professionnel') %}
+            bg-success
+        {% elseif(contact.category.name == 'Sport') %}
+            bg-warning
+        {% else %}
+           bg-danger
+        {% endif %}"
+>
+        {{ contact.category.name }}
+</span>
